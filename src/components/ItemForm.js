@@ -14,16 +14,20 @@ function ItemForm({onItemFormSubmit}) {
   }
 
 
-    const newItem = {
+  function handleSubmit(event) {
+    event.preventDefault()
+
+    onItemFormSubmit({      
       id: uuid(), // the `uuid` library can be used to generate a unique id
       name: itemName,
-      category: itemCategory,
-
+      category: itemCategory
+    })
   }
+
   return( 
-   <form className="NewItem"  onSubmit= {(e => {e.preventDefault(); onItemFormSubmit(newItem)})}>
+   <form className="NewItem"  onSubmit= {handleSubmit}>
       <label>
-        Name: {itemName}
+        Name:
         <input type="text" name="name" value = {itemName} onChange = {handleName}/>
       </label>
 
