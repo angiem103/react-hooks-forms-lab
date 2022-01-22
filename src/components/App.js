@@ -13,7 +13,7 @@ function App() {
 
   function onItemFormSubmit(e, newItem) {
     e.preventDefault()
-    setItems((items) => [...items, newItem])
+    setItems([...items, newItem])
   }
 
   return (
