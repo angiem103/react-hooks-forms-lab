@@ -11,9 +11,11 @@ function App() {
     setIsDarkMode((isDarkMode) => !isDarkMode);
   }
 
-  function onItemFormSubmit(e, newItem) {
-    e.preventDefault()
-    setItems([...items, newItem])
+  function onItemFormSubmit(newItem) {
+    const newArray = [...items,newItem]
+    setItems(newArray)
+    console.log(newItem)
+    console.log(newArray)
   }
 
   return (
